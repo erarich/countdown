@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import CountdownComp from './components/Countdown'
+import Section from './layout/Section'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <CountdownComp />
+    <Section />
   </>
 )
