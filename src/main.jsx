@@ -1,10 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
 import './index.css'
-import Section from './layout/Section'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <Section />
-  </>
-)
+import Root from './components/Root'
+
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
+
+root.render(<Root />);

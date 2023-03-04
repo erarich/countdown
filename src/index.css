@@ -1,13 +1,135 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+/* Header.jsx file */
+
+.header {
+  align-items: center;
+  background: #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.header__logo {
+  background: #999;
+  height: 25px;
+  width: 100px;
+}
+
+/* Menu.jsx file */
+
+.menu {
+  display: flex;
+}
+
+.menu__list {
+  display: flex;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.menu__link {
+  color: #595959;
+  font-family: sans-serif;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+/* Container.jsx file */
+
+.container {
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+/* Footer.jsx file */
+
+.footer {
+  background: #dcdcdc;
+  text-align: left;
+  margin: 0;
+}
+
+.footer__container {
+  display: flex;
+  padding-top: 0.6rem;
+  text-align: left;
+}
+
+.footer__logo {
+  color: #595959;
+  font-family: sans-serif;
+  font-size: large;
+  font-weight: bold;
+  text-align: left;
+}
+
+.footer__message {
+  color: #595959;
+  font-family: sans-serif;
+}
+
+.footer__copyright-notice {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.footer__legal-stuff {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 0;
+}
+
+.footer__last-row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.6rem;
+  padding-bottom: 2rem;
+}
+
+
+
+
+
+
+.mainContainer {
+  background-color: aqua;
+
+}
+
+
+
 .countdown {
   background-color: aquamarine;
   display: flex;
   flex-direction: column;
   text-align: center;
   width: fit-content;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .countdown--content {
-  background-color: blue;
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -16,10 +138,37 @@
 }
 
 .countdown--timers {
-  background-color: greenyellow;
   display: flex;
   flex-direction: column;
   gap: 20px;
   text-transform: uppercase;
   width: fit-content;
+}
+
+.countdown-numbers {
+  font-size: x-large;
+}
+
+.countdown__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.countdown__buttons button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.countdown__buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
