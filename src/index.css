@@ -1,0 +1,25 @@
+.countdown {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: fit-content;
+}
+
+.countdown--content {
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.countdown--timers {
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-transform: uppercase;
+  width: fit-content;
+}
