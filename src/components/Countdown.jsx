@@ -1,5 +1,5 @@
 import Countdown, {zeroPad} from 'react-countdown';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import useSound from 'use-sound';
 
 import alarmSfx from '../assets/sounds/alarm.wav'
@@ -13,8 +13,6 @@ const Testee = () => {
 };
 
 const renderer = ({ days, hours, minutes, seconds, completed}) => {
-  
-
   if (completed) {
     return <Testee />
   } else {
@@ -47,16 +45,47 @@ const renderer = ({ days, hours, minutes, seconds, completed}) => {
 
 const CountdownComp = () => {
 
+  const [inputtedTime, setInputtedTime] = useState(0);
+  const [validInputtedTime, setValidTime] = useState(0)
   const clockRef = useRef();
   const handleStart = () => clockRef.current.start();
   const handlePause = () => clockRef.current.pause();
   const handleStop = () => clockRef.current.stop();
 
+  const convertToNumber = (input) => {
+    const time = input.split(":");
+    let hours = time[0];
+    let minutes = time[1];
+    let seconds = time[2];
+
+    let numberHours = parseInt(hours)
+    let numberMinutes = parseInt(minutes)
+    let numberSeconds = parseInt(seconds)
+
+    let totalInSeconds = (numberHours * 3600) + (numberMinutes * 60) + numberSeconds
+    let totalInMilisconds = totalInSeconds * 1000
+
+    return totalInMilisconds
+  }
+
+
   return (
     <>
       <div className='countdown'>
+        <input 
+          type="time"
+          step="1"
+          value={inputtedTime}
+          onChange={(e) => {setInputtedTime(e.target.value)}}
+          ></input>
+
+        <button type="button" onClick={() => {setValidTime(convertToNumber(inputtedTime))}}>Go</button>
+          <p>{inputtedTime}</p>
+          <p>{typeof(inputtedTime)}</p>
+          <p>{validInputtedTime}</p>
+
         <Countdown
-          date={Date.now() + 5000}
+          date={Date.now() + validInputtedTime}
           renderer={renderer}
           autoStart={false}
           ref={clockRef}
@@ -68,7 +97,6 @@ const CountdownComp = () => {
           <button type="button" onClick={() => {handleStop()}}>stop</button>
         </div>
       </div>
-
     </>
   );
 };

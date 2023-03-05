@@ -1,42 +1,62 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "../css/Menu.css"
 
 const Menu = () => {
   return (
+    <>
+      <nav className="menu">
+        <ul className="menu__list">
+
+          <li className="menu__item">
+            <Link className="menu__link" to="/timer">
+              Timer
+            </Link>
+          </li>
+
+          <li className="menu__item">
+            <Link className="menu__link" to="/timer">
+              Pomodoro
+            </Link>
+          </li>
+
+          <li className="menu__item">
+            <Link className="menu__link" to="/timer">
+              Dates
+            </Link>
+          </li>
+
+          <li className="menu__item">
+            <Link className="menu__link" to="/timer">
+              Others
+            </Link>
+          </li>
+
+        </ul>
+    </nav>
+
     <nav className="menu">
-      <ul className="menu__list">
-          <li className="menu__item">
-              <Link className="menu__link" to="/">
-                  Home
-              </Link>
-          </li>
+      <ul className="menu__list-user">
+        {/* <li className="menu__item">
+          <Link className="menu__link" to="/profile">
+            Profile
+          </Link>
+        </li> */}
 
-          <li className="menu__item">
-              <Link className="menu__link" to="/timer">
-                  Timer
-              </Link>
-          </li>
+        <li className="menu__item">
+          <Link className="menu__link" to="/login">
+            <button className="menu--button" type="button">Log In</button>
+          </Link>
+        </li>
 
-          <li className="menu__item">
-              <Link className="menu__link" to="/profile">
-                  Profile
-              </Link>
-          </li>
-
-          <li className="menu__item">
-              <Link className="menu__link" to="/login">
-                  Log In
-              </Link>
-          </li>
-
-          <li className="menu__item">
-              <Link className="menu__link" to="/signup">
-                  Sign Up
-              </Link>
-          </li>
-
+        <li className="menu__item">
+          <Link className="menu__link" to="/signup">
+            <button className="menu--button" type="button">Sign Up</button>
+          </Link>
+        </li>
       </ul>
     </nav>
+  </>
   );
 };
 

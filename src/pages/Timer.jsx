@@ -4,7 +4,6 @@ import Footer from "../layout/Footer";
 import CountdownComp from "../components/Countdown"
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react";
-import TestTimer from "../components/TestTimer";
 
 const Timer = () => {
 
@@ -32,7 +31,7 @@ const Timer = () => {
       <Header />
       <Container>
         <section>
-          <TestTimer />
+
           <div>
             <CountdownComp />
           </div>
